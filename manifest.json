@@ -15,5 +15,10 @@
     "browser_action": {
         "default_popup": "popup.html"
     },
+    "icons": {
+        
+        "128": "icons/icon_128_grey.png"
+        
+    },
     "manifest_version": 2
 }

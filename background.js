@@ -11,8 +11,18 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     }
 
     if (method == "GET") {
-        if (tabLink[tabId]) tabLink[tabId].push(url);
-        else tabLink[tabId] = [url];
+        if (tabLink[tabId]) {
+            tabLink[tabId].push(url);
+        } else {
+            tabLink[tabId] = [url];
+        }
+
+        if(tabLink[tabId].length == 1) {
+            chrome.browserAction.setIcon({
+                tabId,
+                path: "icons/icon_128_yellow.png"
+            });
+        }
     }
 
 }, { urls: ["*://*/*.m3u8*"] }, ["blocking"])
@@ -20,9 +30,6 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     let { tabId } = message;
-    console.log("popup is asking in background")
-    console.log(tabId);
-    // console.log(tabLink[tabId]);
     let data;
     if (!tabLink[tabId]) data = [];
     else data = tabLink[tabId];
@@ -31,5 +38,17 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 });
 
 chrome.tabs.onRemoved.addListener((tabId) => {
-    if(tabLink[tabId]) delete tabLink[tabId];
+    if (tabLink[tabId]) delete tabLink[tabId];
 })
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (changeInfo.url) {
+        if (tabLink[tabId]) {
+            tabLink[tabId] = [];
+            chrome.browserAction.setIcon({
+                tabId,
+                path: "icons/icon_128_grey.png"
+            });
+        }
+    }
+});

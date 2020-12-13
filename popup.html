@@ -5,7 +5,7 @@
     <style>
         body {
             width: 300px;
-            height: 400px;
+            max-height: 400px;
             background-color: #FAFAFA;
         }
 
@@ -15,7 +15,7 @@
             flex-direction: column;
         }
 
-        .linkbox:first-child{
+        .linkbox:first-child {
             border-left: solid 2px blue;
         }
 
@@ -23,17 +23,23 @@
             padding: 5px;
             display: flex;
             align-items: center;
+            border-bottom: solid 1px transparent;
+            margin-top: 5px;
+            padding: 10px;
         }
+
         .link {
             width: 150px;
+            max-height: 60px;
             display: inline-block;
-            overflow:hidden;
-            text-overflow:ellipsis;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .linkbox:hover {
             background-color: #eeeeee;
             border-bottom: solid 1px blue;
+            cursor: default;
         }
 
         .icongroup {
@@ -44,13 +50,13 @@
             width: 25px;
             padding: 7px;
             border-radius: 5px;
-            
+
         }
 
         .icon:hover {
             cursor: pointer;
-            background-color:#aaaaaa;
-            
+            background-color: #aaaaaa;
+
         }
     </style>
 </head>
