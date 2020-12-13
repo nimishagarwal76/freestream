@@ -4,7 +4,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     let { tabId, url, method } = details;
 
     if (details.type == "main_frame") {
-        var redirectUrl = chrome.extension.getURL('video.html') + "#" + details.url;
+        let redirectUrl = chrome.extension.getURL('video.html') + "#" + details.url;
         return { redirectUrl }
     }
 
@@ -15,7 +15,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
             tabLink[tabId] = [url];
         }
 
-        if(tabLink[tabId].length == 1) {
+        if (tabLink[tabId].length == 1) {
             chrome.browserAction.setIcon({
                 tabId,
                 path: "icons/icon_128_yellow.png"
