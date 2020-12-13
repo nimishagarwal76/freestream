@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            width: 300px;
+            height: 400px;
+            background-color: #FAFAFA;
+        }
+
+        #links {
+            outline: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .linkbox:first-child{
+            border-left: solid 2px blue;
+        }
+
+        .linkbox {
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .link {
+            width: 150px;
+            display: inline-block;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+
+        .linkbox:hover {
+            background-color: #eeeeee;
+            border-bottom: solid 1px blue;
+        }
+
+        .icongroup {
+            margin-left: auto;
+        }
+
+        .icon {
+            width: 25px;
+            padding: 7px;
+            border-radius: 5px;
+            
+        }
+
+        .icon:hover {
+            cursor: pointer;
+            background-color:#aaaaaa;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="links">
+    </div>
+    <script type="text/javascript" src="popup.js"></script>
+</body>
+
+</html>
