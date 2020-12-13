@@ -1,12 +1,10 @@
 var tabLink = {};
 
 chrome.webRequest.onBeforeRequest.addListener((details) => {
-    console.log(details);
     let { tabId, url, method } = details;
 
     if (details.type == "main_frame") {
         var redirectUrl = chrome.extension.getURL('video.html') + "#" + details.url;
-        console.log(redirectUrl);
         return { redirectUrl }
     }
 
