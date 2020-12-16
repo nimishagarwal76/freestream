@@ -5,7 +5,15 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
 
     if (details.type == "main_frame") {
         let redirectUrl = chrome.extension.getURL('video.html') + "#" + details.url;
-        return { redirectUrl }
+
+        if(navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
+            chrome.tabs.update(tabId, {
+                url: redirectUrl
+            })
+            return {
+                cancel: true
+            }
+        } else return { redirectUrl }
     }
 
     if (method == "GET") {
