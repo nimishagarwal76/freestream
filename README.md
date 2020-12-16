@@ -9,8 +9,17 @@ Freestream catches the calls when streaming services are opened and stream them 
 ## Usage
 
 1) Open the streaming service.
+   
    ![streaming service](screenshots/step1.png)
-2) Freestream will detect if the page uses HLS format and will turn yellow. Click on the extension. You will get a list of streams that are being rendered on the page. Open the appropriate stream. (Can be Hit and Trial)
+2) Freestream will detect if the page uses HLS format and will turn yellow. Click on the extension. You will get a list of streams that are being rendered on the page. Open the appropriate stream. (Can be Hit and Trial) **Sometimes service providers send mutiple streams with varying quality, so you might need to open a few streams for better quality**.
+   
    ![open extension](screenshots/step2.png)
 3) Enjoy the streaming service in builtin Freestream player.
+   
    ![stream in extension](screenshots/step3.png) 
+
+
+## Support
+
+Currently the extension is only supported for 
+-  Google Chrome
