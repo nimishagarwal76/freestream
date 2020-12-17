@@ -7,10 +7,12 @@ Most of streaming services use HLS format to stream their content. To display in
 Freestream catches the calls when streaming services are opened and stream them in its own player thus bypassing restrictive features.
 
 ## Installation
+### Chrome
 - Download the extension from [here](https://github.com/nimishagarwal76/freestream/releases/download/0.0.1/freestream.zip)
 - Extract the downloaded zip
-- For Chrome follow the tutorial [here](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/)
-- For Firefox follow the tutorial [here](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/)
+- Follow the tutorial [here](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/)
+### Firefox
+- https://addons.mozilla.org/addon/freestream/
 
 ## Usage
 
